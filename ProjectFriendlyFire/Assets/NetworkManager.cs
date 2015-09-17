@@ -1,65 +1,56 @@
 ﻿using UnityEngine;
+
+using System;
 using System.Collections;
+using System.Net;
+using System.Net.NetworkInformation;
 
 public class NetworkManager : MonoBehaviour {
 
-	string registeredGameName = "dvlDrummer_17_2016";
-	bool isRefreshing = false;
-	float refreshRequestLength = 3.0f;
-	HostData[] hostData;
+    string ip = "127.0.0.1";
+    int port = 25000;
+    int maxConnections = 4;
 
-	private void startServer(){
-		bool useNat = !Network.HavePublicAddress();
-		Network.InitializeServer(32, 25002, useNat);
-		MasterServer.RegisterHost (registeredGameName, "ProjectFriendlyFire","testing for networking");
+	// Use this for initialization
+	void Start () 
+    {
+	    
 	}
 
-	void OnServerInitialized(){
-		Debug.Log ("Server has been initialized");
+	// Update is called once per frame
+	void Update () 
+    {
+	    
 	}
 
-	void OnMasterServerEvent (MasterServerEvent mse){
-		if (mse == MasterServerEvent.RegistrationSucceeded) {
-			Debug.Log ("Registration successful");
-		}
-	}
+    void OnGui()
+    {
+        GUILayout.BeginHorizontal();
+        ip = GUILayout.TextField(ip);
+        GUILayout.Label("IP ADDRESS");
+        GUILayout.EndHorizontal();
 
-	public IEnumerator RefreshHostList(){
-		Debug.Log ("Refreshing...");
-		MasterServer.RequestHostList (registeredGameName);
-		float timeStarted = Time.time;
-		float timeEnd = Time.time + refreshRequestLength;
-		while(Time.time < timeEnd){
-			hostData = MasterServer.PollHostList ();
-			yield return new WaitForEndOfFrame();
-		}
+        GUILayout.BeginHorizontal();
+        port = int.Parse(GUILayout.TextField(port.ToString()));
+        GUILayout.Label("PORT");
+        GUILayout.EndHorizontal();
 
-		if (hostData == null || hostData.Length == 0) {
-			Debug.Log ("No active servers have been found.");
-		} else {
-			Debug.Log (hostData.Length + " have been found.");
-		}
-	}
+        if (GUILayout.Button("CONNECT"))
+        {
+            print("connecting...");
+            Network.Connect(ip, port);
+        }
 
-	public void OnGUI(){
-		if (Network.isClient || Network.isServer) {
-			return;
-		}
-		if(GUI.Button(new Rect(25f,25f,150f, 30f), "Start New Server")){
-			//start Server Function Here
-			startServer();
-		}
-		if(GUI.Button(new Rect(25f,65f,150f, 30f), "Refresh Server List")){
-			//Refresh Server list Function Here
-			StartCoroutine("RefreshHostList");
-		}
-		if (hostData != null) {
-			for(int i = 0; i<hostData.Length; i++){
-				if(GUI.Button(new Rect(Screen.width/2, 65f +(30f*i), 300f,30f),hostData[i].gameName)){
-					Debug.Log ("connecting...");
-					Network.Connect(hostData[i]);
-				}
-			}
-		}
-	}
+        if (GUILayout.Button("START SERVER"))
+        {
+            bool useNat = !Network.HavePublicAddress();
+            print(string.Format("starting server on {0}:{1}", ip, port));
+            Network.InitializeServer(maxConnections, port, useNat);
+        }
+    }
+
+    void OnConnectedToServer()
+    {
+        print("connected");
+    }
 }

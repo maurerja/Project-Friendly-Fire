@@ -9,34 +9,29 @@ var maxConnections : int = 10;
  
 function OnGUI () {
  
-GUILayout.BeginHorizontal ();
-ipAddress = GUILayout.TextField (ipAddress);
-GUILayout.Label ("IP ADDRESS");
-GUILayout.EndHorizontal ();
+    GUILayout.BeginHorizontal ();
+    ipAddress = GUILayout.TextField (ipAddress);
+    GUILayout.Label ("IP ADDRESS");
+    GUILayout.EndHorizontal ();
  
-GUILayout.BeginHorizontal ();
-var tempPort : String;
-tempPort = GUILayout.TextField (port.ToString());
-port = parseInt(tempPort);
-GUILayout.Label ("PORT");
-GUILayout.EndHorizontal();
+    GUILayout.BeginHorizontal ();
+    var tempPort : String;
+    tempPort = GUILayout.TextField (port.ToString());
+    port = parseInt(tempPort);
+    GUILayout.Label ("PORT");
+    GUILayout.EndHorizontal();
  
-if(GUILayout.Button ("CONNECT")) {
-print("connecting... ");
-Network.Connect (ipAddress, port);
-}
+    if(GUILayout.Button ("CONNECT")) {
+        print("connecting... ");
+        Network.Connect (ipAddress, port);
+    }
  
-if(GUILayout.Button ("START SERVER")) {
-print("starting server on " + ipAddress + ":" + port);
-Network.InitializeServer (maxConnections, port);
- 
-}
- 
- 
+    if(GUILayout.Button ("START SERVER")) {
+        print("starting server on " + ipAddress + ":" + port);
+        Network.InitializeServer (maxConnections, port);
+    }
 }
  
 function OnConnectedToServer () {
-print("connected");
- 
- 
+    print("connected");
 }
