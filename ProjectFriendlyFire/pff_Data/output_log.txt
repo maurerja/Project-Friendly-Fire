@@ -1,33 +1,42 @@
-Initialize engine version: 5.1.2f1 (afd2369b692a)
+Initialize engine version: 5.2.0f3 (e7947df39b5c)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: Intel(R) HD Graphics 4000 (ID=0x166)
-    Vendor:   Intel
-    VRAM:     128 MB
+    Renderer: NVIDIA Quadro K1000M  (ID=0xffc)
+    Vendor:   NVIDIA
+    VRAM:     1990 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\enricotj\Desktop\Project-Friendly-Fire\ProjectFriendlyFire\pff_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\enricotj\Desktop\Project-Friendly-Fire\ProjectFriendlyFire\pff_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\enricotj\Desktop\Project-Friendly-Fire\ProjectFriendlyFire\pff_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\enricotj\Desktop\Project-Friendly-Fire\ProjectFriendlyFire\pff_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\enricotj\Desktop\Project-Friendly-Fire\ProjectFriendlyFire\pff_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
-Loading C:\Users\enricotj\Desktop\Project-Friendly-Fire\ProjectFriendlyFire\pff_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
-Platform assembly: C:\Users\enricotj\Desktop\Project-Friendly-Fire\ProjectFriendlyFire\pff_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\enricotj\Desktop\Project-Friendly-Fire\ProjectFriendlyFire\pff_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\enricotj\Desktop\Project-Friendly-Fire\ProjectFriendlyFire\pff_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\enricotj\Desktop\Project-Friendly-Fire\ProjectFriendlyFire\pff_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\enricotj\Desktop\Project-Friendly-Fire\ProjectFriendlyFire\pff_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
-Loading C:\Users\enricotj\Desktop\Project-Friendly-Fire\ProjectFriendlyFire\pff_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.152 seconds
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+Platform assembly: C:\Users\maurerja\Documents\GitHub\Project Friendly Fire\ProjectFriendlyFire\pff_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\maurerja\Documents\GitHub\Project Friendly Fire\ProjectFriendlyFire\pff_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\maurerja\Documents\GitHub\Project Friendly Fire\ProjectFriendlyFire\pff_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\maurerja\Documents\GitHub\Project Friendly Fire\ProjectFriendlyFire\pff_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\maurerja\Documents\GitHub\Project Friendly Fire\ProjectFriendlyFire\pff_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\maurerja\Documents\GitHub\Project Friendly Fire\ProjectFriendlyFire\pff_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\maurerja\Documents\GitHub\Project Friendly Fire\ProjectFriendlyFire\pff_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\maurerja\Documents\GitHub\Project Friendly Fire\ProjectFriendlyFire\pff_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\maurerja\Documents\GitHub\Project Friendly Fire\ProjectFriendlyFire\pff_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.047 seconds
+desktop: 1920x1080 60Hz; virtual: 4646x1080 at -1360,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-Platform assembly: C:\Users\enricotj\Desktop\Project-Friendly-Fire\ProjectFriendlyFire\pff_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\enricotj\Desktop\Project-Friendly-Fire\ProjectFriendlyFire\pff_Data\Managed\System.dll (this message is harmless)
-Platform assembly: C:\Users\enricotj\Desktop\Project-Friendly-Fire\ProjectFriendlyFire\pff_Data\Managed\UnityScript.Lang.dll (this message is harmless)
-Platform assembly: C:\Users\enricotj\Desktop\Project-Friendly-Fire\ProjectFriendlyFire\pff_Data\Managed\Boo.Lang.dll (this message is harmless)
-starting server on 137.112.222.216:25000
+Platform assembly: C:\Users\maurerja\Documents\GitHub\Project Friendly Fire\ProjectFriendlyFire\pff_Data\Managed\System.dll (this message is harmless)
+in start
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+137.112.239.247
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 824c -> priority: 1 
+  Thread -> id: 8048 -> priority: 1 
+starting server on 137.112.239.247:25000
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+server started
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
