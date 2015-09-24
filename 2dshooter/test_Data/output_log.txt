@@ -1,0 +1,47 @@
+Initialize engine version: 5.2.0f3 (e7947df39b5c)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [nvumdshim.dll 8.17.12.9688]
+    Renderer: NVIDIA Quadro K1000M
+    Vendor:   NVIDIA
+    VRAM:     1995 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 NULL=1 RESZ=0 SlowINTZ=0
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\enricotj\Downloads\gamedev\2dshooter\test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\enricotj\Downloads\gamedev\2dshooter\test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\enricotj\Downloads\gamedev\2dshooter\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\enricotj\Downloads\gamedev\2dshooter\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\enricotj\Downloads\gamedev\2dshooter\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\enricotj\Downloads\gamedev\2dshooter\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\enricotj\Downloads\gamedev\2dshooter\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\enricotj\Downloads\gamedev\2dshooter\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\enricotj\Downloads\gamedev\2dshooter\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\enricotj\Downloads\gamedev\2dshooter\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\enricotj\Downloads\gamedev\2dshooter\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\enricotj\Downloads\gamedev\2dshooter\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\enricotj\Downloads\gamedev\2dshooter\test_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.043 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+desktop: 1920x1080 60Hz; virtual: 3840x2160 at 0,0
+<RI> Initialized touch support.
+Platform assembly: C:\Users\enricotj\Downloads\gamedev\2dshooter\test_Data\Managed\System.dll (this message is harmless)
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: a570 -> priority: 1 
+  Thread -> id: c2ec -> priority: 1 
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.008572 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1119.
+Total: 0.476429 ms (FindLiveObjects: 0.051313 ms CreateObjectMapping: 0.026051 ms MarkObjects: 0.388801 ms  DeleteObjects: 0.009078 ms)
+
+Log: connection {1} has been disconnected by timeout; address {::ffff:137.112.236.135:63025}
+aissp: time {572645} lastRecTime {570605} DisTme {2000}, rtt {32} 
+ 
+(Filename:  Line: 1848)
+
+Log: connection {1} has been disconnected by timeout; address {::ffff:137.112.236.135:50864}
+aissp: time {805178} lastRecTime {803142} DisTme {2000}, rtt {15} 
+ 
+(Filename:  Line: 1848)
+

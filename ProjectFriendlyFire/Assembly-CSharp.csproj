@@ -45,8 +45,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\NetworkManager.cs" />
-     <Compile Include="Assets\NetworkManagerOld.cs" />
+     <Compile Include="Assets\Scripts\NetworkManagerHUD.cs" />
  <Reference Include="UnityEngine.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
  </Reference>
