@@ -2,9 +2,9 @@ Initialize engine version: 5.2.0f3 (e7947df39b5c)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: Intel(R) HD Graphics 4000 (ID=0x166)
-    Vendor:   Intel
-    VRAM:     128 MB
+    Renderer: NVIDIA Quadro K1000M (ID=0xffc)
+    Vendor:   NVIDIA
+    VRAM:     1995 MB
 Begin MonoManager ReloadAssembly
 Platform assembly: C:\Users\enricotj\Desktop\test_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading C:\Users\enricotj\Desktop\test_Data\Managed\UnityEngine.dll into Unity Child Domain
@@ -15,48 +15,20 @@ Loading C:\Users\enricotj\Desktop\test_Data\Managed\UnityEngine.UI.dll into Unit
 Platform assembly: C:\Users\enricotj\Desktop\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\enricotj\Desktop\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\enricotj\Desktop\test_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.077 seconds
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+- Completed reload, in  0.046 seconds
+desktop: 1920x1080 60Hz; virtual: 3840x2160 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-Initialize engine version: 5.2.0f3 (e7947df39b5c)
-GfxDevice: creating device client; threaded=1
-Direct3D:
-    Version:  Direct3D 11.0 [level 11.0]
-    Renderer: Intel(R) HD Graphics 4000 (ID=0x166)
-    Vendor:   Intel
-    VRAM:     128 MB
-Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\enricotj\Desktop\test_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\enricotj\Desktop\test_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\enricotj\Desktop\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\enricotj\Desktop\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\enricotj\Desktop\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\enricotj\Desktop\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\enricotj\Desktop\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\enricotj\Desktop\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\enricotj\Desktop\test_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.112 seconds
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
-<RI> Initializing input.
-<RI> Input initialized.
 Platform assembly: C:\Users\enricotj\Desktop\test_Data\Managed\System.dll (this message is harmless)
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 156cc -> priority: 1 
-  Thread -> id: 15b28 -> priority: 1 
-<RI> Initialized touch support.
-Player OnStartClient netId:1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+  Thread -> id: 216f8 -> priority: 1 
+  Thread -> id: 206a4 -> priority: 1 
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.420773 ms
 
-Platform assembly: C:\Users\enricotj\Desktop\test_Data\Managed\System.dll (this message is harmless)
-Setting up 2 worker threads for Enlighten.
-  Thread -> id: 16640 -> priority: 1 
-  Thread -> id: 16668 -> priority: 1 
-Player OnStartClient netId:2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 195.
+Total: 0.148810 ms (FindLiveObjects: 0.010262 ms CreateObjectMapping: 0.007105 ms MarkObjects: 0.127495 ms  DeleteObjects: 0.003157 ms)
 
 Player OnStartClient netId:1
  
@@ -65,4 +37,9 @@ Player OnStartClient netId:1
 Player OnStartClient netId:2
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:61498}
+aissp: time {229984} lastRecTime {227938} DisTme {2000}, rtt {0} 
+ 
+(Filename:  Line: 1848)
 
