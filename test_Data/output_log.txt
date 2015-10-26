@@ -2,9 +2,9 @@ Initialize engine version: 5.2.0f3 (e7947df39b5c)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA Quadro K1000M (ID=0xffc)
+    Renderer: NVIDIA GeForce GTX 970 (ID=0x13c2)
     Vendor:   NVIDIA
-    VRAM:     1995 MB
+    VRAM:     3072 MB
 Begin MonoManager ReloadAssembly
 Platform assembly: C:\Users\enricotj\Desktop\test_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading C:\Users\enricotj\Desktop\test_Data\Managed\UnityEngine.dll into Unity Child Domain
@@ -15,20 +15,60 @@ Loading C:\Users\enricotj\Desktop\test_Data\Managed\UnityEngine.UI.dll into Unit
 Platform assembly: C:\Users\enricotj\Desktop\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\enricotj\Desktop\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\enricotj\Desktop\test_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.046 seconds
-desktop: 1920x1080 60Hz; virtual: 3840x2160 at 0,0
+- Completed reload, in  0.097 seconds
+desktop: 1920x1080 60Hz; virtual: 3840x1080 at -1920,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Initialize engine version: 5.2.0f3 (e7947df39b5c)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 970 (ID=0x13c2)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\enricotj\Desktop\test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\enricotj\Desktop\test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\enricotj\Desktop\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\enricotj\Desktop\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\enricotj\Desktop\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\enricotj\Desktop\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\enricotj\Desktop\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\enricotj\Desktop\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\enricotj\Desktop\test_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.065 seconds
+desktop: 1920x1080 60Hz; virtual: 3840x1080 at -1920,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
 Platform assembly: C:\Users\enricotj\Desktop\test_Data\Managed\System.dll (this message is harmless)
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 216f8 -> priority: 1 
-  Thread -> id: 206a4 -> priority: 1 
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.420773 ms
+  Thread -> id: 1da4 -> priority: 1 
+  Thread -> id: 1b40 -> priority: 1 
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.316927 ms
 
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 195.
-Total: 0.148810 ms (FindLiveObjects: 0.010262 ms CreateObjectMapping: 0.007105 ms MarkObjects: 0.127495 ms  DeleteObjects: 0.003157 ms)
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 203.
+Total: 0.131327 ms (FindLiveObjects: 0.009215 ms CreateObjectMapping: 0.006143 ms MarkObjects: 0.113919 ms  DeleteObjects: 0.001791 ms)
+
+Player OnStartClient netId:1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Platform assembly: C:\Users\enricotj\Desktop\test_Data\Managed\System.dll (this message is harmless)
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 137c -> priority: 1 
+  Thread -> id: f58 -> priority: 1 
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.366847 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 203.
+Total: 0.136191 ms (FindLiveObjects: 0.007167 ms CreateObjectMapping: 0.015359 ms MarkObjects: 0.111359 ms  DeleteObjects: 0.002047 ms)
+
+Player OnStartClient netId:2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
 Player OnStartClient netId:1
  
@@ -37,9 +77,4 @@ Player OnStartClient netId:1
 Player OnStartClient netId:2
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:61498}
-aissp: time {229984} lastRecTime {227938} DisTme {2000}, rtt {0} 
- 
-(Filename:  Line: 1848)
 
