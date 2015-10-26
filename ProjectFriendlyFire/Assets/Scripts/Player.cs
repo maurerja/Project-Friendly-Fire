@@ -7,12 +7,18 @@ public class Player : NetworkBehaviour {
 
     [SyncVar] public float dx;
     [SyncVar] public float dy;
-    public float moveSpeed = 0.02f;
+	[SyncVar] public float angle;
+    private float moveSpeed = 5;
+	private float accel = 5;
+	private float friction = 0.69f;
 
     private const float diag = 0.70710678118f; // sqrt(2)/2
     public GameObject cam;
 
     private Vector3 cameraOffset = new Vector3(0, 0, -10);
+
+
+	private Rigidbody2D rb;
 
     #region Initialization
 
@@ -34,6 +40,8 @@ public class Player : NetworkBehaviour {
             cam.GetComponent<Camera>().orthographicSize = 8;
             cam.GetComponent<Camera>().enabled = false;
         }
+
+		rb = this.GetComponent<Rigidbody2D>();
     }
 
     public override float GetNetworkSendInterval()
@@ -54,95 +62,100 @@ public class Player : NetworkBehaviour {
         {
             return;
         }
-
-        float oldDx = dx;
-        float oldDy = dy;
-        dx = 0;
-        dy = 0;
-        
-        if (Input.GetKey(KeyCode.W))
-        {
-            dy += 1;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            dx -= 1;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            dy -= 1;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            dx += 1;
-        }
-
-        if (dx != 0 && dy != 0)
-        {
-            dx *= diag;
-            dy *= diag;
-        }
-
-        Vector3 dirA = (new Vector3(dx, dy, 0).normalized)*0.52f;
-        Vector3 dirB = Quaternion.AngleAxis(-45, new Vector3(0, 0, 1)) * dirA;
-        Vector3 dirC = Quaternion.AngleAxis(45, new Vector3(0, 0, 1)) * dirA;
-        Vector3 collisionA = transform.position + dirA;
-        Vector3 collisionB = transform.position + dirB;
-        Vector3 collisionC = transform.position + dirC;
-
-        Level lvl = GameObject.Find("LevelManager").GetComponent<Level>();
-        Level.Tile ta = lvl.getTile(collisionA.x, collisionA.y);
-        Level.Tile tb = lvl.getTile(collisionB.x, collisionB.y);
-        Level.Tile tc = lvl.getTile(collisionC.x, collisionC.y);
-
-        bool a = ta != Level.Tile.Empty;
-        bool b = tb != Level.Tile.Empty;
-        bool c = tc != Level.Tile.Empty;
-        if(a && b && c)
-        {
-            dx = 0;
-            dy = 0;
-        }
-        else if (a && b)
-        {
-            
-        }
-        else if (a && c)
-        {
-
-        }
-        else if (b)
-        {
-
-        }
-        else if (c)
-        {
-
-        }
-
-
-        if (dx != oldDx || dy != oldDy)
-        {
-            CmdMove(dx, dy);
-        }
 	}
 
     [Command]
-    public void CmdMove(float dx, float dy)
+    public void CmdMove(float dx, float dy, float angle)
     {
-        this.dx = dx;
-        this.dy = dy;
-        transform.Translate(dx * moveSpeed, dy * moveSpeed, 0);
-        base.SetDirtyBit(1);
+		this.dx = dx;
+		this.dy = dy;
+		float ax = dx * accel;
+		float ay = dy * accel;
+		this.rb.AddForce(new Vector2 (ax, ay));
+		this.rb.velocity = Mathf.Clamp(this.rb.velocity.magnitude, 0, this.moveSpeed) * this.rb.velocity.normalized;
+		if (dx == 0 && dy == 0)
+		{
+			this.rb.velocity *= friction;
+			if (this.rb.velocity.magnitude < 0.001f)
+			{
+				this.rb.velocity = new Vector2(0, 0);
+			}
+		}
+
+		this.angle = angle;
+		transform.rotation = Quaternion.Euler (new Vector3 (0, 0, angle));
+        
+		base.SetDirtyBit(1);
+    }
+	
+    void FixedUpdate()
+    {
+		if (isLocalPlayer)
+		{
+			float oldDx = dx;
+			float oldDy = dy;
+			float oldAngle = angle;
+			dx = 0;
+			dy = 0;
+			angle = -1;
+			
+			if (Input.GetKey(KeyCode.W))
+			{
+				dy += 1;
+			}
+			if (Input.GetKey(KeyCode.A))
+			{
+				dx -= 1;
+			}
+			if (Input.GetKey(KeyCode.S))
+			{
+				dy -= 1;
+			}
+			if (Input.GetKey(KeyCode.D))
+			{
+				dx += 1;
+			}
+			
+			if (dx != 0 && dy != 0)
+			{
+				dx *= diag;
+				dy *= diag;
+			}
+
+			//Get the Screen positions of the object
+			Vector2 positionOnScreen = cam.GetComponent<Camera>().WorldToViewportPoint (transform.position);
+			
+			//Get the Screen position of the mouse
+			Vector2 mouseOnScreen = (Vector2)cam.GetComponent<Camera>().ScreenToViewportPoint(Input.mousePosition);
+			
+			//Get the angle between the points
+			angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen) + 180;
+			
+			if (dx != oldDx || dy != oldDy || angle != oldAngle)
+			{
+				CmdMove(dx, dy, angle);
+			}
+		}
+		ServerFixedUpdate();
     }
 
-    [ServerCallback]
-    public void FixedUpdate()
-    {
-        float tx = dx * moveSpeed;
-        float ty = dy * moveSpeed;
-        transform.Translate(tx, ty, 0);
-    }
+	[ServerCallback]
+	private void ServerFixedUpdate() {
+		float ax = dx * accel;
+		float ay = dy * accel;
+		this.rb.AddForce(new Vector2 (ax, ay));
+		this.rb.velocity = Mathf.Clamp(this.rb.velocity.magnitude, 0, this.moveSpeed) * this.rb.velocity.normalized;
+		if (dx == 0 && dy == 0)
+		{
+			this.rb.velocity *= friction;
+			if (this.rb.velocity.magnitude < 0.001f)
+			{
+				this.rb.velocity = new Vector2(0, 0);
+			}
+		}
+
+		transform.rotation = Quaternion.Euler (new Vector3 (0, 0, angle));
+	}
 
     public void OnGUI()
     {
@@ -163,7 +176,10 @@ public class Player : NetworkBehaviour {
     void RpcPoke(int value)
     {
         Debug.Log("value:" + value);
-    } 
+    }
 
+	float AngleBetweenTwoPoints(Vector3 a, Vector3 b) {
+		return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
+	}
     #endregion
 }
