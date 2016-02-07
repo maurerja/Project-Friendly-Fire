@@ -5,23 +5,38 @@ using System.Collections.Generic;
 public class Level : MonoBehaviour {
 
     public Transform wallPrefab;
+	public Transform blankPrefab;
+	public Transform roadPrefab;
+	public Transform groundPrefab;
+	public Transform doorPrefab;
+
+	public TextAsset csv;
+
 
     public enum Tile : byte
     {
         Empty = 0,
+		Blank,
         Wall,
         SlantUpRight,
         SlantUpLeft,
         SlantDownLeft,
-        SlantDownRight
+        SlantDownRight,
+		Road,
+		Door,
+		Ground
     };
 
     private List<List<Tile>> map;
-    private int mapSize = 16;
+    private int width = 40;
+	private int height = 22;
     private const int CELL_SIZE = 48;
+	private string[,] area = new string[40,22];
 
 	// Use this for initialization
 	void Start () {
+		area = CSVReader.SplitCsvGrid (csv.text);
+		CSVReader.DebugOutputGrid (area);
         generateMap();
 	}
 	
@@ -33,17 +48,48 @@ public class Level : MonoBehaviour {
     void generateMap()
     {
         map = new List<List<Tile>>();
-        for (int i = 0; i < mapSize; i++) // row (y)
+        for (int i = 0; i < height; i++) // row (y)
         {
             List<Tile> row = new List<Tile>();
-            for (int j = 0; j < mapSize; j++) // column (x)
-            {
-                Tile t = Tile.Empty;
-                if (j == 0 || i == 0 || j == mapSize - 1 || i == mapSize - 1)
+            for (int j = 0; j < width; j++) // column (x)
+			{
+				Tile t = Tile.Empty;
+				Debug.Log(i+ " : " + j);
+				switch(area[j,i])
+				{
+				case "0":
+					t = Tile.Blank;
+					Instantiate(blankPrefab, new Vector3(j, i, 10), Quaternion.Euler(new Vector3()));
+					break;
+				case "1":
+					t = Tile.Wall;
+					Instantiate(wallPrefab, new Vector3(j, i, 10), Quaternion.Euler(new Vector3()));
+					break;
+				case "2":
+					t = Tile.Road;
+					Instantiate(roadPrefab, new Vector3(j, i, 10), Quaternion.Euler(new Vector3()));
+					break;
+				case "5":
+					t = Tile.Door;
+					Instantiate(doorPrefab, new Vector3(j, i, 10), Quaternion.Euler(new Vector3()));
+					break;
+				case "6":
+					t = Tile.Ground;
+					Instantiate(groundPrefab, new Vector3(j, i, 10), Quaternion.Euler(new Vector3()));
+					break;
+				default:
+					t = Tile.Blank;
+					Instantiate(blankPrefab, new Vector3(j, i, 10), Quaternion.Euler(new Vector3()));
+					break;
+
+				}
+				
+					/*
+                if (j == 0 || i == 0 || j == width - 1 || i == height - 1)
                 {
                     t = Tile.Wall;
                     Instantiate(wallPrefab, new Vector3(j, i, 10), Quaternion.Euler(new Vector3()));
-                }
+                }*/
                 row.Add(t);
             }
             map.Add(row);

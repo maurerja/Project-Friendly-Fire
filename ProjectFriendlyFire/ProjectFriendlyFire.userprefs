@@ -1,8 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Level.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player.cs" Line="132" Column="67" />
+      <File FileName="Assets\Scripts\Player.cs" Line="41" Column="41" />
+      <File FileName="Assets\Scripts\FPSDisplay.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NetworkManagerHUD.cs" Line="12" Column="39" />
+      <File FileName="Assets\Scripts\CSVreader.cs" Line="82" Column="2" />
+      <File FileName="Assets\Sample_Level1.txt" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Level.cs" Line="54" Column="38" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
